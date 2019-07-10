@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "bg:blocks/cobble_generator_block_dropper"
+   }
+}

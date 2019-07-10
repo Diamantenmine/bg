@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "bg:cobblestone_generator_lvl0_block" }
+    }
+}
