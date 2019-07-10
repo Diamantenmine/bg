@@ -1,0 +1,24 @@
+{
+    "parent": "block/block",
+    "ambientocclusion": false,
+    "elements": [
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#t4" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#t3" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#t1" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#t1" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#t2" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#t2" }
+            }
+        }
+    ],
+    "textures": {
+        "particle": "bg:blocks/cobble_generator_block_lvl0",
+        "t1": "bg:blocks/cobble_generator_block_empty",
+        "t2": "bg:blocks/cobble_generator_block_lvl0",
+        "t3": "bg:blocks/cobble_generator_block_dropper",
+        "t4": "bg:blocks/cobble_generator_block_bottom"
+    }
+}

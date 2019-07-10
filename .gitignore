@@ -20,3 +20,13 @@ build
 # other
 eclipse
 run
+
+# my unwanted folders
+saves/
+logs/
+
+# my unwanted files
+usercache.json
+usernamecache.json
+splash.properties
+options.txt
