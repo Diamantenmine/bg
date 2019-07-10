@@ -19,12 +19,12 @@ public class TileEntityCobblestoneGenerator extends TileEntity implements ITicka
 	@Override
 	public void update() {	//System.out.println(this.tick);
 		this.tick++;
-		if(this.tick >= 50) {
+		if(this.tick >= 40) {
 			this.tick = 0;
 			if((!world.isRemote)) {
 				ItemStack cobble_bg = new ItemStack(Blocks.COBBLESTONE,1);
 				if(this.getWorld().getBlockState(pos)==ModBlocks.COBBLESTONE_GENERATOR_LVL0_BLOCK.getDefaultState())
-					cobble_bg.setCount(16);
+					cobble_bg.setCount(1);
 
 				EntityItem eItem = new EntityItem(this.getWorld(), this.getPos().getX()+0.5F, this.getPos().getY()+1, this.getPos().getZ()+0.5F, cobble_bg);
 
