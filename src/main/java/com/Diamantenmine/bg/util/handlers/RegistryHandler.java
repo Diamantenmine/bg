@@ -14,12 +14,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @EventBusSubscriber
 public class RegistryHandler {
 	@SubscribeEvent
-	public static void onItemRegistry(RegistryEvent.Register<Item> event) {
+	public static void onItemRegister(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
 	}
 	
 	@SubscribeEvent
-	public static void onBlockRegistry(RegistryEvent.Register<Block> event) {
+	public static void onBlockRegister(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 	}
 	
