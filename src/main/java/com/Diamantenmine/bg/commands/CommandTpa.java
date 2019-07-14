@@ -3,6 +3,7 @@ package com.Diamantenmine.bg.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.Diamantenmine.bg.capabilities.PlayerDataTpProvider;
 import com.Diamantenmine.bg.util.Utils;
 
 import net.minecraft.command.CommandException;
@@ -46,14 +47,14 @@ public class CommandTpa implements ICommand {
 			EntityPlayer player = (EntityPlayer) sender;
 			
 			if(args.length != 1) {
-				player.sendMessage(new TextComponentString("Only one argument is allowed"));
+				player.sendMessage(new TextComponentString("Only one argument is allowed. /tpa <PlayerName>"));
 				return;
 			}
 			
 			if(player != null) {
 				final EntityPlayer target = Utils.getPlayer(args[0]);
-				target.sendMessage(new TextComponentString("hi test"));
-				
+				target.sendMessage(new TextComponentString("Please use \"tpaaccept\" to accept the teleportation request or \"tpareject\" to reject the teleportation request."));
+				target.getCapability(PlayerDataTpProvider.PLAYER_DATA_TP, null).addPlayerTpa("Test");//args[0]); //T ODO Make sure it cant get abused
 			}
 		}
 	}

@@ -2,7 +2,6 @@ package com.Diamantenmine.bg;
 
 import com.Diamantenmine.bg.commands.CommandTpa;
 import com.Diamantenmine.bg.proxy.CommonProxy;
-import com.Diamantenmine.bg.tileentity.TileEntityCobblestoneGenerator;
 import com.Diamantenmine.bg.util.Reference;
 
 import net.minecraftforge.fml.common.Mod;
@@ -13,7 +12,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
@@ -31,7 +29,7 @@ public class Main {
 	}
 	@EventHandler
 	public static void init(FMLInitializationEvent event) {
-		 
+		 proxy.init();
 	}
 	
 	public static void PostInit(FMLPostInitializationEvent event) {
