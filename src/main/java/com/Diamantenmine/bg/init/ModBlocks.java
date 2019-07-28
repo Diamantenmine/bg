@@ -3,7 +3,6 @@ package com.Diamantenmine.bg.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.Diamantenmine.bg.blocks.BlockBase;
 import com.Diamantenmine.bg.blocks.CobblestoneGeneratorLvl0Block;
 
 import net.minecraft.block.Block;
