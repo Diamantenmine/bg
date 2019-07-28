@@ -1,6 +1,9 @@
 package com.Diamantenmine.bg;
 
 import com.Diamantenmine.bg.commands.CommandTpa;
+import com.Diamantenmine.bg.commands.CommandTpaaccept;
+import com.Diamantenmine.bg.commands.CommandTpalist;
+import com.Diamantenmine.bg.commands.CommandTpareject;
 import com.Diamantenmine.bg.proxy.CommonProxy;
 import com.Diamantenmine.bg.util.Reference;
 
@@ -39,5 +42,8 @@ public class Main {
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event) {
 		event.registerServerCommand(new CommandTpa());
+		event.registerServerCommand(new CommandTpaaccept());
+		event.registerServerCommand(new CommandTpareject());
+		event.registerServerCommand(new CommandTpalist());
 	}
 }

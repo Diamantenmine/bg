@@ -12,8 +12,8 @@ import net.minecraftforge.common.capabilities.CapabilityManager;
 
 public class CommonProxy {
 	public void init() {
-		//CapabilityManager.INSTANCE.register(IPlayerDataTp.class, new PlayerDataTpStorage(), PlayerDataTp.class);
-		CapabilityManager.INSTANCE.register(IPlayerDataTp.class, new PlayerDataTpStorage(), new PlayerDataTp());
+		CapabilityManager.INSTANCE.register(IPlayerDataTp.class, new PlayerDataTpStorage(), PlayerDataTp.class);
+		//CapabilityManager.INSTANCE.register(IPlayerDataTp.class, new PlayerDataTpStorage(), new PlayerDataTp());
 		MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 	}

@@ -3,11 +3,16 @@ package com.Diamantenmine.bg.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.Diamantenmine.bg.capabilities.PlayerDataTpProvider;
+import com.Diamantenmine.bg.util.Utils;
+
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 
 public class CommandTpareject implements ICommand {
 
@@ -35,7 +40,14 @@ public class CommandTpareject implements ICommand {
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-		// TODO Auto-generated method stub
+		if(sender instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) sender;
+			
+			if(player != null) {
+				player.getCapability(PlayerDataTpProvider.PLAYER_DATA_TP, null).removePlayerTpaFirst();
+				player.sendMessage(new TextComponentString("The request of the first player was denied."));
+			}
+		}
 		
 	}
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Diamantenmine.bg.capabilities.PlayerDataTpProvider;
-import com.Diamantenmine.bg.util.Utils;
 
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
@@ -14,27 +13,27 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 
-public class CommandTpaaccept implements ICommand {
+public class CommandTpalist implements ICommand {
 
 	@Override
-	public int compareTo(ICommand o) {
+	public int compareTo(ICommand arg0) {
 		return 0;
 	}
 
 	@Override
 	public String getName() {
-		return "tpaaccept";
+		return "tpalist";
 	}
 
 	@Override
 	public String getUsage(ICommandSender sender) {
-		return "Accepts the first tpa request.";
+		return "Lists the tpa requests you have in que.";
 	}
 
 	@Override
 	public List<String> getAliases() {
 		List<String> res = new ArrayList<String>();
-		res.add("tpay");
+		res.add("tpan");
 		return res;
 	}
 
@@ -44,20 +43,14 @@ public class CommandTpaaccept implements ICommand {
 			EntityPlayer player = (EntityPlayer) sender;
 			
 			if(player != null) {
-				String name = player.getCapability(PlayerDataTpProvider.PLAYER_DATA_TP, null).getFirstPlayerTpa();
-				if(name == null) {
-					player.sendMessage(new TextComponentString("The are no requests."));
-					return;
-				}
-				EntityPlayer theChosenOne = Utils.getPlayer(name);
-				
-				if(theChosenOne != null) {
-					theChosenOne.setPositionAndUpdate(player.getPosition().getX(), player.getPosition().getY() + 1, player.getPosition().getZ());
-					player.getCapability(PlayerDataTpProvider.PLAYER_DATA_TP, null).removePlayerTpaFirst();
-					player.sendMessage(new TextComponentString("You got teleported."));
+				List<String> tpaList = player.getCapability(PlayerDataTpProvider.PLAYER_DATA_TP, null).getPlayerTpa();
+				player.sendMessage(new TextComponentString("Here are the tparequests in que:"));
+				for(String name : tpaList) {
+					player.sendMessage(new TextComponentString("-" + name));
 				}
 			}
 		}
+
 	}
 
 	@Override
